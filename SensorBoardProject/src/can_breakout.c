@@ -1,15 +1,9 @@
 
-#include "breakout_can.h"
+#include "can_breakout.h"
 
 // SETTINGS
 #define CAN_ID_OFFSET 0x100
 
-// PIN CONFIGURATION
-#define CAN_MODULE CAN0
-#define CAN_TX_MUX_SETTING MUX_PA24G_CAN0_TX
-#define CAN_TX_PIN PIN_PA24G_CAN0_TX
-#define CAN_RX_MUX_SETTING MUX_PA25G_CAN0_RX
-#define CAN_RX_PIN PIN_PA25G_CAN0_RX
 
 // SOME OTHER STUFF
 #define CAN_TX_BUFFER_INDEX    0
@@ -58,17 +52,9 @@ void CAN0_Handler() {
 
 void configure_can() {
 	
-	// Configure TX/RX Pins
-	struct system_pinmux_config pin_config;
-	system_pinmux_get_config_defaults(&pin_config);
-	pin_config.mux_position = CAN_TX_MUX_SETTING;
-	system_pinmux_pin_set_config(CAN_TX_PIN, &pin_config);
-	pin_config.mux_position = CAN_RX_MUX_SETTING;
-	system_pinmux_pin_set_config(CAN_RX_PIN, &pin_config);
-	
 	struct can_config config_can;
 	can_get_config_defaults(&config_can);
-	can_init(&can_instance, CAN_MODULE, &config_can);
+	can_init(&can_instance, CAN0, &config_can);
 	
 	can_start(&can_instance);
 	

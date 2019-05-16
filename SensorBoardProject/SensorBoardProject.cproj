@@ -592,16 +592,22 @@
     <Folder Include="src\config\" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="src\adc_breakout.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\adc_breakout.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="src\ASF\sam0\drivers\adc\adc_sam_l_c\adc.c">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="src\ASF\sam0\drivers\adc\adc_sam_l_c\adc_callback.c">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="src\breakout_can.c">
+    <Compile Include="src\can_breakout.c">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="src\breakout_can.h">
+    <Compile Include="src\can_breakout.h">
       <SubType>compile</SubType>
     </Compile>
     <None Include="src\ASF\sam0\drivers\adc\adc_sam_l_c\adc_feature.h">
