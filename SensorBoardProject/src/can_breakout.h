@@ -24,7 +24,6 @@ void configure_can();
 	Send a standard message over the CAN network.
 	
 	id_value: The ID of the CAN message to send. 
-	
 	data: The 8-byte buffer of data to send. 
 **/
 void can_send_standard_message(uint32_t id_value, uint8_t *data);

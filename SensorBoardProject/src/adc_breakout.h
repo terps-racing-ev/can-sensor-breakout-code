@@ -5,14 +5,26 @@
  *  Author: Justin
  */ 
 
-
 #ifndef ADC_BREAKOUT_H_
 #define ADC_BREAKOUT_H_
 
-void configure_adc();
+#include <asf.h>
 
-void adc_start_read_request();
+/**
+	Callback type for the ADC. 
+**/
+typedef void (*main_adc_callback_t)(uint16_t* const result);
 
+/**
+	Initialize the ADC.
+	
+	callback: Function to call when ADC finishes sampling. 
+**/
+void configure_adc(main_adc_callback_t callback);
 
+/**
+	Begin sampling the ADC inputs. 
+**/
+uint8_t adc_start_read_request();
 
 #endif /* ADC_BREAKOUT_H_ */

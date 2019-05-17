@@ -86,7 +86,6 @@ void handle_rx_fifo_0_new_message() {
 
 void handle_rx_fifo_1_new_message() {
 	
-	
 	static struct can_rx_element_fifo_1 rx_element_fifo_1;
 	
 	can_clear_interrupt_status(&can_instance, CAN_RX_FIFO_1_NEW_MESSAGE);
